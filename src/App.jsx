@@ -1,6 +1,5 @@
 // src/App.jsx
 import React from 'react';
-import 'react-image-lightbox/style.css';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
