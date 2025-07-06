@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -20,13 +20,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Services from './pages/Services';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
    useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
   return (
-    <div className="mx-auto"> {/* Add padding to avoid content hiding behind fixed navbar */}
+    <div className="mx-auto overflow-hidden"> {/* Add padding to avoid content hiding behind fixed navbar */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -43,8 +44,10 @@ function App() {
         <Route path="/menu/vegetarian" element={<Vegetarian />} />
         <Route path="/menu/non-vegetarian" element={<NonVegetarian />} />
         <Route path="/menu/desserts-drinks" element={<DessertsDrinks />} />
+        {/* Catch-All 404 Route */}
+        <Route path="/error" element={<ErrorPage />} />
         {/* Optional: redirect root "/" to home */}
-      
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer/>
       <ScrollToTop/>
