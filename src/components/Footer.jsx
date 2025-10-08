@@ -3,96 +3,67 @@ import {
   FaInstagram,
   FaFacebookF,
   FaWhatsapp,
-  FaYoutube,
-  FaArrowRight,
-  FaPhoneAlt,
+  FaLinkedinIn,
   FaEnvelope,
+  FaPhoneAlt,
   FaMapMarkerAlt,
 } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A0D0D] text-[#FFF8E1] pt-12 pb-6 px-4 sm:px-6 lg:px-12">
+    <footer className="bg-[#55883B] text-[#E6F0DC] pt-12 pb-6 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Column 1: Company Info */}
+        {/* 1️⃣ Company Info */}
         <div>
-          <h2 className="text-2xl font-bold text-[#FF6F00] mb-4">Catering Co.</h2>
-          <p className="text-sm sm:text-base text-[#FFF8E1] opacity-90 mb-4">
-            We serve memorable moments with delicious flavors. Our vision is to be the top catering choice for every celebration.
+          <h2 className="text-2xl font-bold text-[#C1E899] mb-4">L’UNICO Kitchen</h2>
+          <p className="text-sm opacity-90 mb-4 leading-relaxed">
+            Corporate Catering Services since 2023.  
+            We specialize in providing delicious, high-quality meals for companies and corporate events.
           </p>
-          <div className="flex space-x-4 mt-4 text-[#FFF8E1]">
-            <a href="#" className="hover:text-pink-400 transition"><FaInstagram size={20} /></a>
-            <a href="#" className="hover:text-green-300 transition"><FaWhatsapp size={20} /></a>
-            <a href="#" className="hover:text-blue-400 transition"><FaFacebookF size={20} /></a>
-            <a href="#" className="hover:text-red-400 transition"><FaYoutube size={20} /></a>
+          <div className="flex space-x-4 mt-4 text-[#E6F0DC]">
+            <a href="#" className="hover:text-[#C1E899] transition"><FaInstagram size={20} /></a>
+            <a href="#" className="hover:text-[#C1E899] transition"><FaFacebookF size={20} /></a>
+            <a href="#" className="hover:text-[#C1E899] transition"><FaLinkedinIn size={20} /></a>
+            <a href="#" className="hover:text-[#C1E899] transition"><FaWhatsapp size={20} /></a>
           </div>
         </div>
 
-        {/* Column 2: Services */}
+        {/* 2️⃣ Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold text-[#388E3C] mb-4">Our Services</h3>
-          <ul className="space-y-2 text-sm sm:text-base">
-            {[
-              "Wedding Event",
-              "60th Wedding Celebration",
-              "80th Wedding Celebration",
-              "Engagement",
-              "Seemantham",
-              "Birthday Party",
-              "House Warming",
-              "Mehndi Function",
-              "Corporate Events",
-              "Retirement Function",
-            ].map((item, index) => (
-              <li key={index} className="flex items-center hover:text-[#FF6F00] transition">
-                <FaArrowRight className="mr-2 text-[#8B0000]" />
-                <span>{item}</span>
+          <h3 className="text-xl font-semibold text-[#C1E899] mb-4">Quick Links</h3>
+          <ul className="space-y-2 text-sm">
+            {['Home', 'About Us', 'Menu', 'Clients', 'Gallery', 'Blogs', 'Testimonials', 'Contact Us'].map((item, i) => (
+              <li key={i} className="hover:text-[#9A6735] transition">
+                <a href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}>{item}</a>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Column 3: Contact Info */}
+        {/* 3️⃣ Contact */}
         <div>
-          <h3 className="text-xl font-semibold text-[#388E3C] mb-4">Contact Now</h3>
-          <ul className="space-y-4 text-sm sm:text-base">
-            <li className="flex items-start hover:text-[#FF6F00] transition">
-              <FaMapMarkerAlt className="mt-1 mr-3 text-[#FF6F00]" />
-              <span>123 Main Street, Near Anna Salai, Chennai - 600002</span>
+          <h3 className="text-xl font-semibold text-[#C1E899] mb-4">Contact Us</h3>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-start">
+              <FaMapMarkerAlt className="mt-1 mr-3 text-[#C1E899]" />
+              <span>No. 15, Corporate Park, Mount Road, Chennai - 600002</span>
             </li>
-            <li className="flex items-center hover:text-[#FF6F00] transition">
-              <FaPhoneAlt className="mr-3 text-[#FF6F00]" />
+            <li className="flex items-center">
+              <FaPhoneAlt className="mr-3 text-[#C1E899]" />
               <a href="tel:+919876543210">+91 98765 43210</a>
             </li>
-            <li className="flex items-center hover:text-[#FF6F00] transition">
-              <FaEnvelope className="mr-3 text-[#FF6F00]" />
-              <a href="mailto:info@cateringco.in">info@cateringco.in</a>
+            <li className="flex items-center">
+              <FaEnvelope className="mr-3 text-[#C1E899]" />
+              <a href="mailto:info@lunicokitchen.in">info@lunicokitchen.in</a>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Newsletter */}
-      <div className="mt-12 text-center">
-        <h4 className="text-lg font-semibold text-[#8B0000] mb-3">Subscribe to our Newsletter</h4>
-        <form className="flex flex-col sm:flex-row justify-center items-center gap-4 px-4 sm:px-0">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-4 py-2 w-full sm:w-72 rounded-md focus:outline-none text-[#333333] text-sm sm:text-base"
-          />
-          <button
-            type="submit"
-            className="bg-[#FF6F00] hover:bg-orange-700 text-white px-5 py-2 rounded-md transition text-sm sm:text-base"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
-
-      {/* Footer bottom */}
-      <div className="border-t border-[#8B0000] mt-10 pt-4 text-center text-xs sm:text-sm text-[#FFF8E1] opacity-80">
-        © {new Date().getFullYear()} Catering Co. | Designed by <span className="text-[#FF6F00] font-medium">Rakesh Creative Solution</span>
+      {/* Bottom Footer */}
+      <div className="border-t border-[#C1E899] mt-10 pt-4 text-center text-xs sm:text-sm text-[#E6F0DC] opacity-80">
+        © {new Date().getFullYear()} L’UNICO Kitchen | Designed by{' '}
+        <span className="text-[#C1E899] font-medium">Rakesh InspireLoop Tech</span>
       </div>
     </footer>
   );
