@@ -93,8 +93,8 @@ const About = () => {
 
       {/* Moving Text / Marquee */}
       <div className="absolute bottom-0 w-full overflow-hidden">
-        <div className="whitespace-nowrap animate-marquee py-4 bg-[#55883B] text-[#E6F0DC] font-bold text-xl sm:text-2xl text-center">
-          🍽️ Book your corporate catering now! Exceptional taste & service guaranteed! 🍽️
+        <div className="whitespace-nowrap animate-marquee py-4 px-4 ring-2 ring-red-600 bg-[#55883B] rounded-full  m-2 text-[#E6F0DC] font-bold text-xl sm:text-2xl text-center">
+        Book your corporate catering now! Exceptional taste & service guaranteed!
         </div>
       </div>
 

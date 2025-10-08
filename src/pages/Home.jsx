@@ -1,11 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
 import Gallery from "./Gallery";
 import servicesData from "../data/servicesData";
 import Testimonials from "./Testimonials";
 import Blog from "./Blogs";
-export const Home = () => {
+
+ const Home = () => {
   return (
     <>
       {/* Hero Section */}
@@ -43,18 +45,18 @@ export const Home = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <a
-              href="/contact"
-              className="bg-[#55883B] hover:bg-[#9A6735] text-white px-10 py-4 rounded-full font-bold transition duration-300 shadow-lg hover:scale-105"
+            <NavLink
+              to="/contact"
+              className="bg-[#55883B] hover:bg-[#9A6735] text-white px-10 py-4 rounded-full font-bold transition duration-300 shadow-lg hover:scale-105 text-center"
             >
               Book a Tasting
-            </a>
-            <a
-              href="/menu"
-              className="border-2 border-[#C1E899] text-[#C1E899] hover:bg-[#C1E899] hover:text-[#9A6735] px-10 py-4 rounded-full font-bold transition duration-300 shadow hover:scale-105"
+            </NavLink>
+            <NavLink
+              to="/menu"
+              className="border-2 border-[#C1E899] text-[#C1E899] hover:bg-[#C1E899] hover:text-[#9A6735] px-10 py-4 rounded-full font-bold transition duration-300 shadow hover:scale-105 text-center"
             >
               View Menu
-            </a>
+            </NavLink>
           </div>
         </div>
       </section>
@@ -69,8 +71,7 @@ export const Home = () => {
             Why Choose L’UNICO Kitchen?
           </h2>
           <div className="grid gap-10 md:grid-cols-3 text-left">
-            {[
-              {
+            {[{
                 title: "Corporate Expertise",
                 desc: "Specialized in corporate catering, delivering fresh, balanced meals for professionals and events.",
               },
@@ -149,11 +150,10 @@ export const Home = () => {
 
       <About />
       <Gallery />
-      <Blog/>
-      <Testimonials/>
+      <Blog />
+      <Testimonials />
       <Contact />
     </>
   );
 };
-
 export default Home;

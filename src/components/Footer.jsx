@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   FaInstagram,
   FaFacebookF,
@@ -7,24 +8,44 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const Footer = () => {
+  const quickLinks = [
+    "Home",
+    "About",
+    "Menu",
+    "Clients",
+    "Gallery",
+    "Blogs",
+    "Testimonials",
+    "Contact",
+  ];
+
   return (
-    <footer className="bg-[#55883B] text-[#E6F0DC] pt-12 pb-6 px-6 lg:px-12">
+    <footer className="bg-[#55883B] text-[#E6F0DC] pt-12 pb-6 px-6 sm:px-8 lg:px-12">
+    
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* 1️⃣ Company Info */}
         <div>
           <h2 className="text-2xl font-bold text-[#C1E899] mb-4">L’UNICO Kitchen</h2>
           <p className="text-sm opacity-90 mb-4 leading-relaxed">
-            Corporate Catering Services since 2023.  
-            We specialize in providing delicious, high-quality meals for companies and corporate events.
+            Corporate Catering Services since 2023. We specialize in providing
+            delicious, high-quality meals for companies and corporate events.
           </p>
           <div className="flex space-x-4 mt-4 text-[#E6F0DC]">
-            <a href="#" className="hover:text-[#C1E899] transition"><FaInstagram size={20} /></a>
-            <a href="#" className="hover:text-[#C1E899] transition"><FaFacebookF size={20} /></a>
-            <a href="#" className="hover:text-[#C1E899] transition"><FaLinkedinIn size={20} /></a>
-            <a href="#" className="hover:text-[#C1E899] transition"><FaWhatsapp size={20} /></a>
+            <a href="#" className="hover:text-[#C1E899] transition">
+              <FaInstagram size={20} />
+            </a>
+            <a href="#" className="hover:text-[#C1E899] transition">
+              <FaFacebookF size={20} />
+            </a>
+            <a href="#" className="hover:text-[#C1E899] transition">
+              <FaLinkedinIn size={20} />
+            </a>
+            <a href="#" className="hover:text-[#C1E899] transition">
+              <FaWhatsapp size={20} />
+            </a>
           </div>
         </div>
 
@@ -32,9 +53,16 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold text-[#C1E899] mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            {['Home', 'About Us', 'Menu', 'Clients', 'Gallery', 'Blogs', 'Testimonials', 'Contact Us'].map((item, i) => (
+            {quickLinks.map((item, i) => (
               <li key={i} className="hover:text-[#9A6735] transition">
-                <a href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}>{item}</a>
+                <NavLink
+                  to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                  className={({ isActive }) =>
+                    isActive ? "font-semibold text-[#C1E899]" : "font-normal"
+                  }
+                >
+                  {item}
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -62,8 +90,11 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-[#C1E899] mt-10 pt-4 text-center text-xs sm:text-sm text-[#E6F0DC] opacity-80">
-        © {new Date().getFullYear()} L’UNICO Kitchen | Designed by{' '}
+        © {new Date().getFullYear()} L’UNICO Kitchen | Designed by{" "}
         <span className="text-[#C1E899] font-medium">Rakesh InspireLoop Tech</span>
+        <br />
+        Created with ❤️ by{" "}
+        <span className="text-[#C1E899] font-medium">StartWebsite</span>
       </div>
     </footer>
   );
