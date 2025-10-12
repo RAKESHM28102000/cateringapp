@@ -11,13 +11,15 @@ import Blog from "./pages/Blogs";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ErrorPage from "./pages/ErrorPage";
-
 import MenuOverview from "./pages/MenuOverview";
 import MenuCategory from "./pages/MenuCategory";
+import Clients from "./pages/Clients";
+
+// ✅ Import FloatingButtons Component
+import FloatingButtons from "./components/FloatingButtons";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Clients from "./pages/Clients";
 
 function App() {
   useEffect(() => {
@@ -25,11 +27,12 @@ function App() {
   }, []);
 
   return (
-    <div className="mx-auto overflow-hidden">
+    <div className="mx-auto overflow-hidden relative">
+      {/* Navbar */}
       <Navbar />
 
+      {/* Page Routes */}
       <Routes>
-        {/* Core Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -48,6 +51,10 @@ function App() {
         <Route path="*" element={<Navigate to="/error" replace />} />
       </Routes>
 
+      {/* ✅ Floating Action Buttons */}
+      <FloatingButtons />
+
+      {/* Footer & Scroll */}
       <Footer />
       <ScrollToTop />
     </div>
