@@ -3,26 +3,35 @@ import emailjs from 'emailjs-com';
 import 'aos/dist/aos.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   const [status, setStatus] = useState('');
 
+  // handle input changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
+  // send email
   const sendEmail = (e) => {
     e.preventDefault();
+
     emailjs
       .send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_h6eng78',       // replace with your EmailJS service ID
+        'template_c56l5np',      // replace with your template ID
         {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: formData.message,
+          message: formData.message
         },
-        'YOUR_PUBLIC_KEY'
+        'RV5UEeN1IX6VKRKTl'      // replace with your public key
       )
       .then(
         () => {
@@ -42,7 +51,7 @@ const Contact = () => {
       className="pt-24 pb-20 px-4 sm:px-6 lg:px-12 bg-[#E6F0DC] min-h-screen"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
+
         {/* Contact Form */}
         <div data-aos="fade-right" className="bg-white p-8 rounded-2xl shadow-lg border border-[#C1E899]">
           <h2 className="text-4xl font-extrabold text-[#55883B] mb-4 text-center">
@@ -52,6 +61,8 @@ const Contact = () => {
             Questions or bookings? Fill out the form and we'll get back to you promptly.
           </p>
           <form className="space-y-6" onSubmit={sendEmail}>
+
+            {/* Name */}
             <input
               type="text"
               name="name"
@@ -61,6 +72,8 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full p-3 bg-[#F0F7E6] text-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#55883B] shadow"
             />
+
+            {/* Email */}
             <input
               type="email"
               name="email"
@@ -70,6 +83,8 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full p-3 bg-[#F0F7E6] text-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#55883B] shadow"
             />
+
+            {/* Phone */}
             <input
               type="text"
               name="phone"
@@ -79,6 +94,8 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full p-3 bg-[#F0F7E6] text-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#55883B] shadow"
             />
+
+            {/* Message */}
             <textarea
               name="message"
               placeholder="Your Message"
@@ -88,6 +105,8 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full p-3 bg-[#F0F7E6] text-[#333333] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#55883B] shadow resize-none"
             ></textarea>
+
+            {/* Submit Button */}
             <button
               type="submit"
               className="w-full py-3 bg-[#55883B] text-white font-semibold rounded-full shadow-lg hover:bg-[#9A6735] transition transform hover:scale-105"
@@ -95,6 +114,8 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+
+          {/* Status Message */}
           {status && (
             <p
               className={`mt-6 text-center text-md font-medium p-3 rounded ${
@@ -119,6 +140,7 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+
       </div>
     </section>
   );
