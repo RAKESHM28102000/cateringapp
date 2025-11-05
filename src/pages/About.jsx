@@ -94,7 +94,7 @@ const About = () => {
         {/* Enlarged Image */}
         <div className="flex justify-center" data-aos="fade-left">
           <img
-            src="/assets/group-image.jpg"
+            src="/images/catering-about.jpg"
             alt="Corporate Catering Team"
             className="rounded-3xl shadow-2xl w-full max-w-lg sm:max-w-xl md:max-w-2xl border-4 border-[#C1E899] object-cover transform hover:scale-105 transition-transform duration-700"
           />
@@ -155,7 +155,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32" data-aos="fade-up">
         <div className="flex justify-center">
           <img
-            src="/assets/dining.jpg"
+            src="/assets/festival-image.jpg"
             alt="Our Strength"
             className="rounded-3xl shadow-2xl w-full max-w-lg sm:max-w-xl md:max-w-2xl border-4 border-[#C1E899] object-cover transform hover:scale-105 transition-transform duration-700"
           />
