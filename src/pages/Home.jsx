@@ -2,10 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
-import Gallery from "./Gallery";
-import servicesData from "../data/servicesData";
-import Testimonials from "./Testimonials";
-import Blog from "./Blogs";
+import Clients from "./Clients";
+import Menu from "./Menu";
 
  const Home = () => {
   return (
@@ -103,55 +101,9 @@ import Blog from "./Blogs";
         </div>
       </section>
 
-      {/* Services Section */}
-      <section
-        className="pt-24 pb-20 px-4 sm:px-6 md:px-10 bg-[#E6F0DC]"
-        data-aos="fade"
-        id="services"
-      >
-        <div className="max-w-7xl mx-auto">
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center text-[#55883B] mb-14"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-            data-aos="fade-down"
-          >
-            Our Corporate Menus
-          </h1>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {servicesData.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-[#C1E899]/50"
-                data-aos="zoom-in"
-                data-aos-delay={index * 100}
-              >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-64 sm:h-72 object-cover transform group-hover:scale-105 transition duration-300"
-                />
-                <div className="p-6 sm:p-8">
-                  <h2
-                    className="text-xl sm:text-2xl font-bold text-[#9A6735] mb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    {service.title}
-                  </h2>
-                  <p className="text-[#333333] text-base sm:text-lg leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <About />
-      <Gallery />
-      <Blog />
-      <Testimonials />
+      <Clients/>
+      <Menu/>
       <Contact />
     </>
   );

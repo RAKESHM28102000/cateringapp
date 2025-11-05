@@ -20,6 +20,7 @@ import FloatingButtons from "./components/FloatingButtons";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Menu from "./pages/Menu";
 
 function App() {
   useEffect(() => {
@@ -36,15 +37,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="/contact" element={<Contact />} />
-        <Route path="/testimonials" element={<Testimonials />} />
+        {/* <Route path="/testimonials" element={<Testimonials />} /> */}
         <Route path="/clients" element={<Clients />} />
-        <Route path="/blogs" element={<Blog />} />
+        {/* <Route path="/blogs" element={<Blog />} /> */}
 
         {/* ✅ Dynamic Menu Pages */}
-        <Route path="/menu" element={<MenuOverview />} />
-        <Route path="/menu/:category" element={<MenuCategory />} />
+        <Route path="/menu" element={<Menu/>} />
+        {/* <Route path="/menu/:category" element={<MenuCategory />} /> */}
 
         {/* Error & Fallback */}
         <Route path="/error" element={<ErrorPage />} />

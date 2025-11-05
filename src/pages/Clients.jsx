@@ -1,118 +1,116 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Building2, Factory, Landmark, Briefcase } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-// Sample clients data
 const clients = [
   {
-    name: "TechCorp",
-    type: "Corporate",
-    logo: "/assets/client1.jpg",
-    testimonial:
-      "L’UNICO Kitchen transformed our corporate event with impeccable service and delicious South Indian cuisine.",
+    name: "B. Braun Medical Pvt. Ltd",
+    type: "Corporate Client",
+    icon: <Factory className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
+    feedback:"On behalf of BBraun, thank you very much for making the special Diwali food arrangements like a feast. All the employees were thoroughly satisfied, and the food was excellent, with no compromise on quality and service.You’ve truly made this Diwali memorable for all the BBraun Chennai plant employees by providing the required menu in a grand feast. This is the first time we’ve provided this type of meal option, and we received very positive feedback from everyone.",
+    person: "Amarnath PK, Human Resources Business Partner – BBraun",
   },
   {
-    name: "Priya Weddings",
-    type: "Wedding Planner",
-    logo: "/assets/client2.jpg",
-    testimonial:
-      "The wedding catering was flawless! Guests loved the flavors and presentation. A truly professional team.",
+    name: "Musashi Paint India Pvt. Ltd",
+    type: "Corporate Client",
+    icon: <Building2 className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
+    feedback:
+      "L’unico Kitchen has been providing daily meals for our employees with consistent quality and hygiene. Their punctuality and service are commendable.",
+    person: "Operations Head – Musashi Paint India Pvt. Ltd",
   },
   {
-    name: "Pondicherry Food Festival",
-    type: "Event",
-    logo: "/assets/client5.jpg",
-    testimonial:
-      "Multi-cuisine stalls handled perfectly. Guests were thrilled with the quality and service.",
+    name: "Netafim Irrigation India Pvt. Ltd",
+    type: "Corporate Client",
+    icon: <Landmark className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
+    feedback:
+      "From the quality of the products to the timelines of delivery, you have consistently exceeded our expectations.",
+    person: "Kanimozhi Manogaran, HR – Orbia Precision Agriculture (Netafim)",
   },
   {
-    name: "NGO Foodies",
-    type: "NGO",
-    logo: "/assets/client4.jpg",
-    testimonial:
-      "Healthy and delicious meals for our fundraiser. They managed everything smoothly and professionally.",
+    name: "Mahindra World City Developers Ltd",
+    type: "Corporate Client",
+    icon: <Briefcase className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
+    feedback:
+      "Reliable catering partner providing homely and nutritious food for our staff on a large scale. Exceptional coordination and service quality.",
+    person: "Admin Team – Mahindra World City Developers Ltd",
   },
 ];
 
 const Clients = () => {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 900, once: true });
   }, []);
 
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-12 bg-[#E6F0DC] min-h-screen">
+    <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-12 bg-[#E6F0DC] min-h-screen">
       <div className="max-w-7xl mx-auto text-center">
+        {/* Header */}
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#55883B] mb-8 sm:mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#55883B] mb-6 sm:mb-10 transition-colors duration-300 hover:text-[#9A6735]"
           data-aos="fade-down"
         >
           Our Esteemed Clients
         </h1>
         <p
-          className="text-[#333333] text-sm sm:text-base mb-12 max-w-3xl mx-auto"
+          className="text-[#333333] text-base sm:text-lg max-w-3xl mx-auto mb-12"
           data-aos="fade-up"
         >
-          We proudly serve a wide range of clients across corporate events, weddings,
-          festivals, and community initiatives. Our commitment to quality, freshness,
-          and authentic flavors keeps our clients coming back.
+          We proudly serve some of the most reputed corporate and industrial clients in
+          Chennai, offering hygienic, nutritious, and homestyle meals every day.
         </p>
 
-        {/* Client Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 mb-12">
+        {/* Client Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-10 mb-16">
           {clients.map((client, idx) => (
             <div
               key={client.name}
-              className="bg-white rounded-2xl shadow-md p-4 sm:p-6 flex flex-col items-center transition-all hover:shadow-xl"
+              className="bg-gradient-to-br from-[#ffffff] via-[#F3F8ED] to-[#EAF4DE] p-6 sm:p-8 rounded-2xl shadow-md border border-[#C1E899]/60 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500"
               data-aos="zoom-in"
-              data-aos-delay={idx * 100}
+              data-aos-delay={idx * 120}
             >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-full mb-3 sm:mb-4 border-4 border-[#C1E899]"
-              />
-              <h3 className="text-sm sm:text-lg font-semibold text-[#9A6735]">{client.name}</h3>
-              <p className="text-xs sm:text-sm text-[#55883B]/90">{client.type}</p>
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="mb-4">{client.icon}</div>
+                <h3
+                  className="text-xl sm:text-2xl font-bold text-[#9A6735] mb-1"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  {client.name}
+                </h3>
+                <p className="text-sm sm:text-base text-[#55883B] font-medium mb-4">
+                  {client.type}
+                </p>
+                <p className="text-[#333333] italic text-sm sm:text-base leading-relaxed mb-3">
+                  “{client.feedback}”
+                </p>
+                <p className="text-xs sm:text-sm text-[#9A6735]/80 font-semibold">
+                  — {client.person}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Client Testimonials */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-          {clients.map((client, idx) => (
-            <div
-              key={client.name + "-testimonial"}
-              className="bg-white rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-xl border-l-4 border-[#C1E899] transition-transform hover:-translate-y-1"
-              data-aos="fade-up"
-              data-aos-delay={idx * 150}
-            >
-              <h3 className="text-lg sm:text-xl font-bold text-[#9A6735] mb-2">
-                {client.name}
-              </h3>
-              <p className="text-sm sm:text-base text-[#333333] italic">
-                "{client.testimonial}"
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Call to Action */}
+        {/* Call To Action */}
         <div
-          className="mt-12 sm:mt-16 bg-[#55883B] text-white p-6 sm:p-8 rounded-2xl shadow-lg"
+          className="mt-10 bg-gradient-to-r from-[#55883B] via-[#6f8f47] to-[#9A6735] text-white p-8 sm:p-10 rounded-3xl shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
           data-aos="fade-up"
         >
-          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+          <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">
             Want to become our next satisfied client?
           </h3>
-          <p className="text-sm sm:text-base mb-4 sm:mb-6">
-            Book your event catering today and let us serve happiness through every meal.
+          <p className="text-base sm:text-lg mb-6 max-w-2xl mx-auto">
+            Experience premium catering services with a homely touch. Reach out to us today
+            and make your corporate meals truly special.
           </p>
-          <a
-            href="/contact"
-            className="bg-[#C1E899] text-[#55883B] font-bold px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-[#9A6735] hover:text-white transition duration-300"
+          <NavLink
+            to="/contact"
+            className="inline-block bg-[#C1E899] text-[#55883B] font-bold px-8 py-3 sm:px-10 sm:py-4 rounded-full shadow-md hover:bg-white hover:text-[#9A6735] transition duration-300 ease-in-out"
           >
             Contact Us
-          </a>
+          </NavLink>
+         
         </div>
       </div>
     </section>

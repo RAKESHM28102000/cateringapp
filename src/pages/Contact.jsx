@@ -23,15 +23,15 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_h6eng78',       // replace with your EmailJS service ID
-        'template_c56l5np',      // replace with your template ID
+        'service_h6eng78', // replace with your EmailJS service ID
+        'template_c56l5np', // replace with your template ID
         {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message
         },
-        'RV5UEeN1IX6VKRKTl'      // replace with your public key
+        'RV5UEeN1IX6VKRKTl' // replace with your public key
       )
       .then(
         () => {
@@ -48,20 +48,23 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="pt-24 pb-20 px-4 sm:px-6 lg:px-12 bg-[#E6F0DC] min-h-screen"
+      className="pt-24 pb-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-[#E6F0DC] to-[#F6FAEE] min-h-screen transition-all duration-500"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* Contact Form */}
-        <div data-aos="fade-right" className="bg-white p-8 rounded-2xl shadow-lg border border-[#C1E899]">
+        <div
+          data-aos="fade-right"
+          className="bg-white p-8 rounded-2xl shadow-2xl border border-[#C1E899] hover:shadow-[#C1E899]/50 transition duration-300"
+        >
           <h2 className="text-4xl font-extrabold text-[#55883B] mb-4 text-center">
             Get in Touch
           </h2>
           <p className="text-[#333333] mb-6 text-center">
             Questions or bookings? Fill out the form and we'll get back to you promptly.
           </p>
-          <form className="space-y-6" onSubmit={sendEmail}>
 
+          <form className="space-y-6" onSubmit={sendEmail}>
             {/* Name */}
             <input
               type="text"
@@ -119,19 +122,32 @@ const Contact = () => {
           {status && (
             <p
               className={`mt-6 text-center text-md font-medium p-3 rounded ${
-                status.includes('successfully') ? 'text-green-800 bg-green-100' : 'text-red-800 bg-red-100'
+                status.includes('successfully')
+                  ? 'text-green-800 bg-green-100'
+                  : 'text-red-800 bg-red-100'
               }`}
             >
               {status}
             </p>
           )}
+
+          {/* Address Info */}
+          <div className="mt-8 text-center text-[#333333]">
+            <h3 className="font-semibold text-lg">📍 Address</h3>
+            <p>Plot 5, Park View Apartments, Raj Nandhavanam,</p>
+            <p>Chettipunniyam, Chengalpattu – 603 204</p>
+            <p className="mt-2 font-semibold text-[#55883B]">GST No: 33ABCDEFGH1234Z1A</p>
+          </div>
         </div>
 
         {/* Google Map */}
-        <div data-aos="fade-left" className="w-full h-96 rounded-2xl overflow-hidden shadow-lg border border-[#C1E899]">
+        <div
+          data-aos="fade-left"
+          className="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-[#C1E899]"
+        >
           <iframe
             title="Our Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.410348237823!2d77.50006607540484!3d12.835149790907062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad60b8d33d0e27%3A0x3a0a64b9e6d2f5a3!2sChengalpattu%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sin!4v1696684500000!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=Plot+5,+Park+View+Apartments,+Raj+Nandhavanam,+Chettipunniyam,+Chengalpattu,+Tamil+Nadu+603204&output=embed"
             width="100%"
             height="100%"
             className="border-0"
@@ -140,7 +156,6 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
       </div>
     </section>
   );
