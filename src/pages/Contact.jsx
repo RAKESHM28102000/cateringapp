@@ -23,15 +23,15 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_h6eng78', // replace with your EmailJS service ID
-        'template_c56l5np', // replace with your template ID
+        'service_qrlnyba', // replace with your EmailJS service ID
+        'template_2cb6uim', // replace with your template ID
         {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message
         },
-        'RV5UEeN1IX6VKRKTl' // replace with your public key
+        'A3T1YhQtqF8gBck65' // replace with your public key
       )
       .then(
         () => {

@@ -13,28 +13,12 @@ const clients = [
     person: "Amarnath PK, Human Resources Business Partner – BBraun",
   },
   {
-    name: "Musashi Paint India Pvt. Ltd",
-    type: "Corporate Client",
-    icon: <Building2 className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
-    feedback:
-      "L’unico Kitchen has been providing daily meals for our employees with consistent quality and hygiene. Their punctuality and service are commendable.",
-    person: "Operations Head – Musashi Paint India Pvt. Ltd",
-  },
-  {
     name: "Netafim Irrigation India Pvt. Ltd",
     type: "Corporate Client",
     icon: <Landmark className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
     feedback:
       "From the quality of the products to the timelines of delivery, you have consistently exceeded our expectations.",
     person: "Kanimozhi Manogaran, HR – Orbia Precision Agriculture (Netafim)",
-  },
-  {
-    name: "Mahindra World City Developers Ltd",
-    type: "Corporate Client",
-    icon: <Briefcase className="w-10 h-10 sm:w-12 sm:h-12 text-[#9A6735]" />,
-    feedback:
-      "Reliable catering partner providing homely and nutritious food for our staff on a large scale. Exceptional coordination and service quality.",
-    person: "Admin Team – Mahindra World City Developers Ltd",
   },
 ];
 

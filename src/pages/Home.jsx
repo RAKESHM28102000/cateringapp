@@ -27,14 +27,14 @@ import Menu from "./Menu";
             style={{ fontFamily: "'Montserrat', sans-serif" }}
             data-aos="fade-up"
           >
-            Corporate Catering Services
+            Corporate and Industrial Catering Services
           </p>
           <p
             className="text-md sm:text-lg md:text-xl text-[#E6F0DC]/90 mb-8 font-medium max-w-3xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Serving excellence since September 2023 — We redefine corporate dining with quality, creativity,
+            Serving excellence since September 2023 — We redefine Corporate and Industrial dining with quality, creativity,
             and impeccable service for offices, conferences, and corporate events.
           </p>
 
@@ -70,8 +70,8 @@ import Menu from "./Menu";
           </h2>
           <div className="grid gap-10 md:grid-cols-3 text-left">
             {[{
-                title: "Corporate Expertise",
-                desc: "Specialized in corporate catering, delivering fresh, balanced meals for professionals and events.",
+                title: "Corporate and Industrial Expertise",
+                desc: "Specialized in Corporate and Industrial Catering, delivering fresh, balanced meals for professionals and events.",
               },
               {
                 title: "Reliable Service",

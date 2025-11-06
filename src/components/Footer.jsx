@@ -155,10 +155,7 @@ const Footer = () => {
   >
     Rakesh InspireLoop Tech
   </a>
-</span>{" "}
-
-          | Created with ❤️ by{" "}
-          <span className="text-[#C1E899] font-medium">Indian</span>
+</span>
         </p>
       </div>
     </footer>

@@ -17,9 +17,8 @@ const About = () => {
 
   const stats = [
     { icon: <FaProjectDiagram className="text-4xl mb-3 text-[#55883B]" />, number: 10000, text: "Servings Daily" },
-    { icon: <FaUsers className="text-4xl mb-3 text-[#55883B]" />, number: 105, text: "Happy Corporate Clients" },
-    { icon: <FaUserTie className="text-4xl mb-3 text-[#55883B]" />, number: 79, text: "Team Members" },
-    { icon: <FaClock className="text-4xl mb-3 text-[#55883B]" />, number: 730, text: "Operational Days/Year" },
+    { icon: <FaUserTie className="text-4xl mb-3 text-[#55883B]" />, number:100, text: "Team Members" },
+    { icon: <FaClock className="text-4xl mb-3 text-[#55883B]" />, number: 340,text: "Operational Days/Year" },
   ];
 
   return (
@@ -39,7 +38,7 @@ const About = () => {
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            <b>L’Unico Kitchen – The Taste of Heaven</b> is a premier corporate catering service based in Chennai,
+            <b>L’Unico Kitchen – The Taste of Heaven</b> is a premier Corporate and Industrial catering service based in Chennai,
             delivering <b>hygienic, nutritious, and home-style meals</b> to large-scale industrial and corporate clients.
           </p>
           <p
@@ -69,7 +68,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "Homestyle Taste", text: "Authentic, comforting meals that make you feel at home." },
-              { title: "Corporate Expertise", text: "Seamless catering solutions for large-scale operations." },
+              { title: "Corporate and Industrial Expertise", text: "Seamless catering solutions for large-scale operations." },
               { title: "Trusted by Leaders", text: "Serving top brands with consistency and reliability." },
               { title: "Licensed & Certified", text: "FSSAI, Fire Safety, MSME, and GST registered." },
             ].map((item, index) => (
@@ -134,7 +133,7 @@ const About = () => {
       </div>
 
       {/* ------------------- STATS SECTION ------------------- */}
-      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto mb-32">
+      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-32">
         {stats.map((item, index) => (
           <div
             key={index}

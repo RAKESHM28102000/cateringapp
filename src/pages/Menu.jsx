@@ -125,7 +125,7 @@ const Menu = () => {
           className="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#9A6735] to-[#55883B] mb-10 tracking-wide"
           data-aos="fade-down"
         >
-          Weekly Corporate Menu
+         Our Weekly Menu
         </h1>
 
         {/* Day Buttons */}
